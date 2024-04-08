@@ -3,7 +3,7 @@ import { Router } from "express";
 const router = Router();
 
 router.get("/", (req, res) => {
-  res.render("index", { title: "StacionRA" });
+  res.render("index", { title: "Bazar RA" });
 });
 
 router.get("/about", (req, res) => {

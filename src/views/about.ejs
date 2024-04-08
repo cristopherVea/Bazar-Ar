@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-    <%- include("partials/head") %>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <%- include("partials/navigation") %>
-
-    <!-- My Content -->
-    <main
-      class="container pt-2 text-center d-flex justify-content-center align-items-center vh-100"
-    >
-      <section>
-        <h1 class="display-1">Descubre más sobre nosotros</h1>
-
-        <p>
-          
-          Nuestro proyecto, StacionAR, consiste en una aplicación web
-          de realidad aumentada interactiva que te permite llevar tu 
-          experiencia de visita a otro nivel. 
-
-        </p>
-      </section>
-    </main>
+<html>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <!-- we use cors proxy to avoid cross-origin problems -->
+        <!--
+          ⚠️⚠️⚠️
+          https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
+          You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
+          ⚠️⚠️⚠️
+        -->
+        <a-entity
+          position="0 0 0"
+          scale="0.15 0.15 0.15"
+          gltf-model="/img/Locomotora_Harry_Potter.glb"
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
   </body>
 </html>
+

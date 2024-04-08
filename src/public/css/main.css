@@ -1,6 +1,6 @@
 body {
-  background: #202020;
-  color: white;
+  background: #ffffff;
+  color: black;
 }
 
 .navbar-brand {
@@ -14,5 +14,5 @@ body {
 }
 
 header img {
-  width: 1600%;
+  width: 60%;
 }
