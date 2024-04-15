@@ -1,40 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Contact Page</title>
-    <%- include("partials/head") %>
-  </head>
-  <body>
-    <%- include("partials/navigation") %>
+<html>
+<head>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+</head>
+<body>
+<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+    <a-entity id="location-based-entity" material='color: red' geometry='primitive: box' scale="10 10 10"></a-entity>
+</a-scene>
 
-    <div class="container vh-100 d-flex justify-content-center align-items-center">
-        <div class="card animated flipInY bg-dark p-3 border-secondary">
-          <div class="card-header bg-dark text-white text-center">
-            <h3>Contact Me</h3>
-          </div>
-          <div class="card-body">
-            <form action="">
-              <div class="mb-3">
-                <label for="email">Email:</label>
-                <input class="form-control" type="text" placeholder="Email" />
-              </div>
-              <div class="mb-3">
-                <label for="email">Message:</label>
-                <textarea
-                  class="form-control"
-                  name=""
-                  cols="30"
-                  rows="10"
-                  placeholder="Message"
-                ></textarea>
-              </div>
-              <button class="btn btn-primary btn-block">Save</button>
-            </form>
-          </div>
-        </div>
-    </div>
+<script>
+window.onload = function() {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var entity = document.querySelector('#location-based-entity');
+            entity.setAttribute('gps-new-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
+        }, function(error) {
+            console.log("Error al obtener la ubicación: ", error);
+        });
+    } else {
+        console.log("Geolocalización no es soportada por este navegador.");
+    }
+};
+</script>
 
-    <%- include("partials/footer") %>
-  </body>
+</body>
 </html>
+
