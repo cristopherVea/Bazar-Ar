@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Empresa</title>
+    <%- include("partials/head") %>
+    <%- include("partials/navigation") %>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif; /* Establece la fuente predeterminada */
+        }
+        header, section, footer {
+            text-align: center; /* Centra el texto de los headers, sections y footers */
+            margin: 20px; /* Añade un margen alrededor de los elementos para evitar que toquen los bordes de la ventana */
+        }
+        img {
+            display: block; /* Hace que la imagen sea un bloque para centrarla más fácilmente */
+            margin: 0 auto; /* Auto establece los márgenes izquierdo y derecho al automático, centrando la imagen horizontalmente */
+            max-width: 100%; /* Hace que la imagen sea responsive y no sobrepase el ancho del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a Nuestra Empresa</h1>
+    </header>
+    <section>
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos una empresa comprometida con [describir aquí la misión, visión o valores de tu empresa]. Nuestro objetivo es [inserta aquí los objetivos de tu empresa].</p>
+        <img src="/img/th3.jpeg" alt="Descripción de la imagen">
+    </section>
+    <footer>
+        <p>Contacto: info@nuestraempresa.com</p>
+    </footer>
+</body>
+</html>
