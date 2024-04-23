@@ -10,6 +10,10 @@ router.get("/about", (req, res) => {
   res.render("about", { title: "About First Node Website" });
 });
 
+router.get("/codigodeBarra", (req, res) => {
+  res.render("codigodeBarra", { title: "codigodeBarra" });
+});
+
 router.get("/contact", (req, res) => {
   res.render("contact", { title: "Pagina de contacto" });
 });
