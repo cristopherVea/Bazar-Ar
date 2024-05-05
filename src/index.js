@@ -21,6 +21,9 @@ app.use(morgan("dev"));
 // routes
 app.use(indexRoutes);
 
+
+
+
 // static files
 app.use(express.static(join(__dirname, "public")));
 

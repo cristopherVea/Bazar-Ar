@@ -1,4 +1,5 @@
-import { Router } from "express";
+import { Router } from 'express';
+import path from 'path';
 
 const router = Router();
 
@@ -28,4 +29,8 @@ router.get("/conocenos", (req, res) => {
 });
 
 
+router.get("/index.html", (req, res) => {
+  res.render("/index.html", { title: "Conoce el proyecto" });
+});
+// Continúa con tus otras rutas
 export default router;
