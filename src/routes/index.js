@@ -19,8 +19,12 @@ router.get("/contact", (req, res) => {
   res.render("contact", { title: "Pagina de contacto" });
 });
 
+router.get("/Mapa", (req, res) => {
+  res.render("Mapa", { title: "Mapa Bazar" });
+});
+
 router.get("/login", (req, res) => {
-  res.render("login", { title: "Iniciar seccion" });
+  res.render("login", { title: "Iniciar sesion" });
 });
 
 
