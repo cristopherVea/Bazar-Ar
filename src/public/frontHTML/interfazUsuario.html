@@ -62,6 +62,12 @@
             color: red;
         }
     </style>
+    <script>
+        function redirectTo(path) {
+            console.log('Redirecting to: ' + path);
+            window.location.href = path;
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -69,9 +75,8 @@
         <div class="user-info">
             <p><strong>Correo Electrónico:</strong> usuario@example.com</p>
             <p><strong>Fecha de Registro:</strong> 13 de mayo de 2024</p>
-            <button class="logout-button">Cerrar Sesión</button>
-            <button class="home-button" onclick="window.location.href='ARenHTML.html';">Inicio</button>
-        </div>
+            <button class="logout-button" onclick="redirectTo('/src/views/index.ejs');">Cerrar Sesión</button>
+            <button class="home-button" onclick="redirectTo('ARenHTML.html');">Inicio</button>
         </div>
     </div>
 </body>
